@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 import pickle as pkl
 import requests, os
 import faiss, numpy as np
@@ -12,6 +13,14 @@ came in.
 """
 
 app = FastAPI(title="Real-Time Fraud Detection Engine", description="This API provides real-time fraud detection capabilities.", version="1.0.0" )
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows all websites to talk to the API
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MODEL_ARTIFACTS_PATH = os.path.join(BASE_DIR, './model_artifacts.pkl')
