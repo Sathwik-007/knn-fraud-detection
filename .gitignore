@@ -1,2 +1,3 @@
 .vscode
 __pycache__/
+fraud-detection/node_modules/*
