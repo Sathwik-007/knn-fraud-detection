@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './App.css';
 
-// const API_URL = "https://knn-fraud-detection-2aus.onrender.com/predict";
-const API_URL = "http://127.0.0.1:8000/predict";  // Localhost for testing
+const API_URL = "https://knn-fraud-detection-2aus.onrender.com/predict";
+// const API_URL = "http://127.0.0.1:8000/predict";  // Localhost for testing
 
 // const NORMAL_TXN = [-0.73, 1.25, 0.89, -0.15, 0.44, -0.02, 0.55, 0.12, -0.34, -0.11, 0.99, 0.23, -0.55, 0.45, 0.11, 0.22, -0.33, 0.44, 0.55, 0.11, -0.12, -0.05, 0.08, 0.02, 0.14, 0.07, -0.03, 0.01, 45.50];
 // const FRAUD_TXN = [-4.22, 2.85, -5.60, 6.99, -2.52, -1.42, -4.53, 1.39, -2.77, -5.77, 4.20, -6.89, -0.59, -7.28, 0.38, -3.14, -5.83, -1.01, 0.41, 0.12, 0.51, -0.03, -0.46, 0.32, 0.04, 0.10, 0.24, 0.14, 999.99];
