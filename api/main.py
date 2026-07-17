@@ -65,9 +65,26 @@ async def predict_fraud(transaction: Transaction):
 
     is_fraud = anomaly_score > THRESHOLD
 
+    explanation = []
+    if is_fraud:
+        # calculate the squared difference between the input and its nearest neighbor
+        squared_distances = (scaled_data[0] ** 2)
+        total_distance = np.sum(squared_distances)
+
+        top_indices = np.argsort(squared_distances)[::-1][:3]  # Get indices of top 5 contributing features
+
+        explanation = [
+            {
+                "feature": f"V{i+1}" if i < 28 else "Amount",
+                "contribution": round(float(squared_distances[i] / total_distance * 100), 1)
+            }
+            for i in top_indices
+        ]
+
     return {
         'fraud_detected': is_fraud,
-        'anomaly_score': anomaly_score,
+        'anomaly_score': round(anomaly_score, 5),
         'threshold': THRESHOLD,
-        'action': 'DECLINE' if is_fraud else 'APPROVE'
+        'action': 'DECLINE' if is_fraud else 'APPROVE',
+        'explanation': explanation
     }
