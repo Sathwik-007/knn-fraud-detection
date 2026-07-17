@@ -99,7 +99,3 @@ npm run dev
 ---
 
 *Developed as a portfolio piece demonstrating production-grade ML engineering, high-scale inference deployment, and MLOps best practices.*
-
-```
-
-```
