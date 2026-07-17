@@ -9,6 +9,9 @@ An end-to-end, full-stack Machine Learning pipeline for real-time credit card fr
 
 This project bypasses traditional Supervised Learning in favor of **Semi-Supervised Anomaly Detection** using Meta's **FAISS** (Facebook AI Similarity Search). By modeling "normal" human spending behavior in a 29-dimensional vector space, the system catches novel, zero-day fraud attacks in sub-50 milliseconds via an optimized HNSW (Hierarchical Navigable Small World) graph.
 
+
+![UI_screenshot](./fraud-dashboard/src/assets/UI.png)
+
 ---
 
 ## 🏗️ System Architecture
